@@ -1,15 +1,33 @@
-var demo = {};
+var demo = {}, centerX = 1500 / 2, centerY = 1000 / 2, eastw, speed = 7;
 demo.state0 = function() {};
 demo.state0.prototype = {
-    preload: function() {},
+    preload: function() {
+        game.load.image('eastw', '/assets/sprites/eastw.png');
+    },
     create: function() {
-        game.stage.backgroundColor = '#80ff80';
+        game.stage.backgroundColor = '#123456';
         console.log('state0');
         addChangeStateEventListeners ();// переключатель сцен
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; //экран по размеру окна
+        eastw = game.add.sprite(centerX, centerY, 'eastw');
+        eastw.anchor.setTo(0.5, 0.5);
         
     },
-    update: function() {}
+    update: function() {
+        if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)){
+            eastw.x += speed;
+        }
+        else if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)){
+            eastw.x -= speed;
+        }
+        if (game.input.keyboard.isDown(Phaser.Keyboard.UP)){
+            eastw.y -= speed;
+        }
+        else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
+            eastw.y += speed;
+        }
+    }
+    
 };
 
 function changeState (i, stateNum){

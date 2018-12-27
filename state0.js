@@ -49,7 +49,9 @@ demo.state0.prototype = {
         }
         else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
             eastw.y += speed;
-            
+            if (eastw.y > 762){
+                eastw.y = 762;
+            }
             
         }
     }

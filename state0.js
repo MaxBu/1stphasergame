@@ -8,7 +8,6 @@ demo.state0.prototype = {
     create: function() {
         game.physics.startSystem(Phaser.Physics.ARCADE); //создание рамок
         game.stage.backgroundColor = '#123456';
-        console.log('state0');
         addChangeStateEventListeners ();// переключатель сцен
         game.world.setBounds (0, 0, 2288, 1000);
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL; //экран по размеру окна
@@ -59,7 +58,7 @@ demo.state0.prototype = {
 };
 
 function changeState (i, stateNum){
-    //console.log(i);
+    console.log('state' + stateNum);
     game.state.start('state' + stateNum);
 }
 

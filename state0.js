@@ -2,8 +2,8 @@ var demo = {}, centerX = 1500 / 6, centerY = 1000 / 1.4, eastw, speed = 4;
 demo.state0 = function() {};
 demo.state0.prototype = {
     preload: function() {
-        game.load.spritesheet('eastw', '/assets/spritesheets/eastwspritesheet.png', 250, 386);
-        game.load.image('background', '/assets/backgrounds/background.png');
+        game.load.spritesheet('eastw','assets/spritesheets/eastwspritesheet.png', 250, 386);
+        game.load.image('background', 'assets/backgrounds/background.png');
     },
     create: function() {
         game.physics.startSystem(Phaser.Physics.ARCADE); //создание рамок
@@ -49,6 +49,7 @@ demo.state0.prototype = {
         }
         else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN)){
             eastw.y += speed;
+            
             
         }
     }

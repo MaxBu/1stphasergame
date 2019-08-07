@@ -7,3 +7,5 @@ demo.state2.prototype = {
     },
     update: function() {}
 };
+
+//test git webstorm
